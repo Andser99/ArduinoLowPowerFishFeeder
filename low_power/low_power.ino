@@ -86,6 +86,16 @@ void setup ()
   DIDR0 = DIDR0 | B00111111;
   
   counter = EEPROM.read(0) * checkpointMod;
+#ifdef DEBUG
+  Serial.begin(9600);
+  Serial.print("Loaded counter <counter, byte, mod> ");
+  Serial.print(counter);
+  Serial.print(" ");
+  Serial.print(counter / checkpointMod);
+  Serial.print(" ");
+  Serial.print(checkpointMod);
+  Serial.println(" ");
+#endif
 }
 
 void loop () 
