@@ -8,5 +8,7 @@ The LED was connected with a 220 ohm resistor.
 
 LEDs such as the power LED located on the arduino board should be removed to further decrease the necessary current.
 
+New Tests with a rechargeable 9V Li-ion battery and voltage divider - 430ohm (100 + 330 in series) and 560ohm resistors used for voltage dividing giving exactly 5.091V from a 9V battery (In my case, the battery had 9.08V so 5.136V). This setup draws 10.61mA constantly and a low Iq voltage regulator is the next point of interest (e.g. STLQ50/ST715).
+
 ### Example usage
 DEBUG def should be set to false to remove power usage from serial messaging (although the impact is minimal, ~5% increase in power consumption). feedingTicksRequired should be set to the desired feeding interval (HoursToTicks(<x>) converts hours to a tick period that fits in with the 8 second sleep period. Pin D2 can be connected to an LED so its easier to find out whether the program is running or dead, this will create a small flash every 8 seconds.
